@@ -1,5 +1,5 @@
 *.user
 obj
 bin
-_Resharper*
+_ReSharper*
 *.suo

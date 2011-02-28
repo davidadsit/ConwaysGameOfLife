@@ -93,13 +93,33 @@ namespace GameOfLifeTests
 		}
 
 		[Test]
-		public void Occilator_functions()
+		public void Blinker_test()
 		{
 			WorldEvolver worldEvolver = new WorldEvolver(new CellEvolver());
 			World world = new World(3, 3);
 			world.SetCell(world.GetCoordinate(1, 0), Cell.Alive);
 			world.SetCell(world.GetCoordinate(1, 1), Cell.Alive);
 			world.SetCell(world.GetCoordinate(1, 2), Cell.Alive);
+			Console.Out.WriteLine(world);
+			Console.Out.WriteLine("");
+			world = worldEvolver.Evolve(world);
+			Console.Out.WriteLine(world);
+			Console.Out.WriteLine("");
+			world = worldEvolver.Evolve(world);
+			Console.Out.WriteLine(world);
+		}
+
+		[Test]
+		public void Beacon_test()
+		{
+			WorldEvolver worldEvolver = new WorldEvolver(new CellEvolver());
+			World world = new World(6, 6);
+			world.SetCell(world.GetCoordinate(1, 1), Cell.Alive);
+			world.SetCell(world.GetCoordinate(1, 2), Cell.Alive);
+			world.SetCell(world.GetCoordinate(2, 1), Cell.Alive);
+			world.SetCell(world.GetCoordinate(4, 3), Cell.Alive);
+			world.SetCell(world.GetCoordinate(4, 4), Cell.Alive);
+			world.SetCell(world.GetCoordinate(3, 4), Cell.Alive);
 			Console.Out.WriteLine(world);
 			Console.Out.WriteLine("");
 			world = worldEvolver.Evolve(world);

@@ -15,8 +15,14 @@ namespace GameOfLifeTests
 		[Test]
 		public void DeadCellIsAlive()
 		{
-			Cell cell = new DeadCell();
+			Cell cell = Cell.Dead;
 			Assert.IsFalse(cell.IsAlive());
+		}
+
+		[Test]
+		public void DeadNamedCtorReturnsDeadCell()
+		{
+			Assert.IsInstanceOf(typeof (DeadCell), Cell.Dead);
 		}
 	}
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellEvolverTests.cs" />
     <Compile Include="DeadCellTests.cs" />
     <Compile Include="LiveCellTests.cs" />
   </ItemGroup>

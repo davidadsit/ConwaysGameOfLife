@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GameOfLife
+﻿namespace GameOfLife
 {
 	public class LiveCell : Cell
 	{

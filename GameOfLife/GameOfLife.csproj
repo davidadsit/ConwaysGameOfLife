@@ -43,9 +43,12 @@
     <Compile Include="Evolvers\Implementations\CellEvolver.cs" />
     <Compile Include="DeadCell.cs" />
     <Compile Include="Evolvers\ICellEvolver.cs" />
+    <Compile Include="Evolvers\Implementations\WorldEvolver.cs" />
+    <Compile Include="Evolvers\IWorldEvolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="LiveCell.cs" />
+    <Compile Include="World.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

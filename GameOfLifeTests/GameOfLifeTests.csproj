@@ -49,6 +49,8 @@
     <Compile Include="CellEvolverTests.cs" />
     <Compile Include="DeadCellTests.cs" />
     <Compile Include="LiveCellTests.cs" />
+    <Compile Include="WorldEvolverTests.cs" />
+    <Compile Include="WorldTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameOfLife\GameOfLife.csproj">

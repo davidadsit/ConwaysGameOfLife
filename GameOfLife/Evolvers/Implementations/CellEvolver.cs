@@ -11,7 +11,7 @@ namespace GameOfLife.Evolvers.Implementations
 			{
 				return Cell.Dead;
 			}
-			return Cell.Alive;
+			return livingNeighbors == 2 ? cell : Cell.Alive;
 		}
 	}
 }

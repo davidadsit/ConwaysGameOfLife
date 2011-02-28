@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coordinate.cs" />
     <Compile Include="Evolvers\Implementations\CellEvolver.cs" />
     <Compile Include="DeadCell.cs" />
     <Compile Include="Evolvers\ICellEvolver.cs" />

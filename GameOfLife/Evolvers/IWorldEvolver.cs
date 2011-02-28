@@ -2,5 +2,6 @@
 {
 	public interface IWorldEvolver
 	{
+		World Evolve(World world);
 	}
 }

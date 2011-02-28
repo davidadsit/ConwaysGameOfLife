@@ -26,6 +26,14 @@ namespace GameOfLifeTests
 		}
 
 		[Test]
+		public void When_a_dead_cell_with_2_living_neighbors_evolves_the_result_is_dead()
+		{
+			CellEvolver cellEvolver = new CellEvolver();
+			Cell evolved = cellEvolver.Evolve(Cell.Dead, GetNeighbors(2));
+			Assert.IsFalse(evolved.IsAlive());
+		}
+
+		[Test]
 		public void When_a_living_cell_with_0_living_neighbors_evolves_the_result_is_dead()
 		{
 			CellEvolver cellEvolver = new CellEvolver();

@@ -139,7 +139,7 @@ namespace GameOfLife
 				for (int j = 0; j < Width; j++)
 				{
 					Coordinate coordinate = new Coordinate(i, j);
-					rowBuilder.Append(GetCell(coordinate).ToString() ? LiveCellRepresentation : DeadCellRepresentation).Append(" ");
+					rowBuilder.Append(GetCell(coordinate).ToString()).Append(" ");
 				}
 				worldBuilder.AppendLine(rowBuilder.ToString().TrimEnd());
 			}

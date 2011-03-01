@@ -95,11 +95,9 @@ namespace GameOfLifeTests
 		[Test]
 		public void Blinker_test()
 		{
-			WorldEvolver worldEvolver = new WorldEvolver(new CellEvolver());
-			World world = new World(3, 3);
-			world.SetCell(world.GetCoordinate(1, 0), Cell.Alive);
-			world.SetCell(world.GetCoordinate(1, 1), Cell.Alive);
-			world.SetCell(world.GetCoordinate(1, 2), Cell.Alive);
+			WorldEvolver worldEvolver = new WorldEvolver(new B3S23CellEvolver());
+			const string blinkerInit = "- - -\r\nO O O\r\n- - -";
+			World world = new World(blinkerInit);
 			Console.Out.WriteLine(world);
 			Console.Out.WriteLine("");
 			world = worldEvolver.Evolve(world);
@@ -112,14 +110,14 @@ namespace GameOfLifeTests
 		[Test]
 		public void Beacon_test()
 		{
-			WorldEvolver worldEvolver = new WorldEvolver(new CellEvolver());
-			World world = new World(6, 6);
-			world.SetCell(world.GetCoordinate(1, 1), Cell.Alive);
-			world.SetCell(world.GetCoordinate(1, 2), Cell.Alive);
-			world.SetCell(world.GetCoordinate(2, 1), Cell.Alive);
-			world.SetCell(world.GetCoordinate(4, 3), Cell.Alive);
-			world.SetCell(world.GetCoordinate(4, 4), Cell.Alive);
-			world.SetCell(world.GetCoordinate(3, 4), Cell.Alive);
+			WorldEvolver worldEvolver = new WorldEvolver(new B3S23CellEvolver());
+			const string beaconInit = @"- - - - - -
+- O O - - -
+- O - - - -
+- - - - O -
+- - - O O -
+- - - - - -";
+			World world = new World(beaconInit);
 			Console.Out.WriteLine(world);
 			Console.Out.WriteLine("");
 			world = worldEvolver.Evolve(world);

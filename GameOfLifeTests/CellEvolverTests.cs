@@ -14,13 +14,13 @@ namespace GameOfLifeTests
 		[Test]
 		public void CellEvolver_is_an_ICellEvolver()
 		{
-			Assert.IsInstanceOf(typeof (ICellEvolver), new CellEvolver());
+			Assert.IsInstanceOf(typeof (ICellEvolver), new B3S23CellEvolver());
 		}
 
 		[Test]
 		public void When_a_dead_cell_with_3_living_neighbors_evolves_the_result_is_alive()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Dead, GetNeighbors(3));
 			Assert.IsTrue(evolved.IsAlive());
 		}
@@ -28,7 +28,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_dead_cell_with_2_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Dead, GetNeighbors(2));
 			Assert.IsFalse(evolved.IsAlive());
 		}
@@ -36,7 +36,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_0_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(0));
 			Assert.IsFalse(evolved.IsAlive());
 		}
@@ -44,7 +44,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_1_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, Cell.Alive);
 			Assert.IsFalse(evolved.IsAlive());
 		}
@@ -52,7 +52,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_2_living_and_1_dead_neighbor_evolves_the_result_is_alive()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(2, 1));
 			Assert.IsTrue(evolved.IsAlive());
 		}
@@ -60,7 +60,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_2_living_neighbors_evolves_the_result_is_alive()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(2));
 			Assert.IsTrue(evolved.IsAlive());
 		}
@@ -68,7 +68,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_3_living_neighbors_evolves_the_result_is_alive()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(3));
 			Assert.IsTrue(evolved.IsAlive());
 		}
@@ -76,7 +76,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_4_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(4));
 			Assert.IsFalse(evolved.IsAlive());
 		}
@@ -84,7 +84,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_5_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(5));
 			Assert.IsFalse(evolved.IsAlive());
 		}
@@ -92,7 +92,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_6_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(6));
 			Assert.IsFalse(evolved.IsAlive());
 		}
@@ -100,7 +100,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_7_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(7));
 			Assert.IsFalse(evolved.IsAlive());
 		}
@@ -108,7 +108,7 @@ namespace GameOfLifeTests
 		[Test]
 		public void When_a_living_cell_with_8_living_neighbors_evolves_the_result_is_dead()
 		{
-			CellEvolver cellEvolver = new CellEvolver();
+			B3S23CellEvolver cellEvolver = new B3S23CellEvolver();
 			Cell evolved = cellEvolver.Evolve(Cell.Alive, GetNeighbors(8));
 			Assert.IsFalse(evolved.IsAlive());
 		}

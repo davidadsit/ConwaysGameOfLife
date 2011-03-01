@@ -12,6 +12,11 @@ namespace GameOfLife
 			get { return new DeadCell(); }
 		}
 
+		public static Cell FromChar(char c)
+		{
+			return c.ToString() == Alive.ToString() ? Alive : Dead;
+		}
+
 		public abstract bool IsAlive();
 	}
 }

@@ -22,6 +22,27 @@ namespace GameOfLife
 			}
 		}
 
+		public World(string initialWorld)
+		{
+			string[] rows = initialWorld.Split(new[] {"\r\n"}, StringSplitOptions.None);
+			int height = rows.Length;
+			int width = rows[0].Trim().Replace(" ", string.Empty).Length;
+			if (height < 3 || width < 3)
+			{
+				throw new IndexOutOfRangeException("Sorry, the World must be at least 3x3.");
+			}
+			_cells = new Cell[height,width];
+			for (int i = 0; i < height; i++)
+			{
+				string row = rows[i].Trim().Replace(" ", string.Empty);
+				for (int j = 0; j < row.Length; j++)
+				{
+					Coordinate coordinate = GetCoordinate(i, j);
+					SetCell(coordinate, Cell.FromChar(row[j]));
+				}
+			}
+		}
+
 		public int Height
 		{
 			get { return _cells.GetUpperBound(0) + 1; }
@@ -118,7 +139,7 @@ namespace GameOfLife
 				for (int j = 0; j < Width; j++)
 				{
 					Coordinate coordinate = new Coordinate(i, j);
-					rowBuilder.Append(GetCell(coordinate).IsAlive() ? "O " : "- ");
+					rowBuilder.Append(GetCell(coordinate).ToString() ? LiveCellRepresentation : DeadCellRepresentation).Append(" ");
 				}
 				worldBuilder.AppendLine(rowBuilder.ToString().TrimEnd());
 			}
@@ -200,12 +221,7 @@ namespace GameOfLife
 
 		private List<Cell> GetTopLeftCornerNeighbors()
 		{
-			return new List<Cell>
-			       	{
-			       		GetCell(GetCoordinate(1, 0)),
-			       		GetCell(GetCoordinate(1, 1)),
-			       		GetCell(GetCoordinate(0, 1)),
-			       	};
+			return new List<Cell> {GetCell(GetCoordinate(1, 0)), GetCell(GetCoordinate(1, 1)), GetCell(GetCoordinate(0, 1)),};
 		}
 
 		private List<Cell> GetTopRightCornerNeighbors()

@@ -1,3 +1,4 @@
+using System;
 using GameOfLife;
 using NUnit.Framework;
 
@@ -60,6 +61,22 @@ namespace GameOfLifeTests
 			World world = new World(Height, Width);
 			Assert.AreEqual(Height, world.Height);
 			Assert.AreEqual(Width, world.Width);
+		}
+
+		[Test]
+		public void World_can_be_initialized_by_string()
+		{
+			World world = new World(5, 5);
+			World clone = new World(world.ToString());
+			Assert.AreEqual(world.ToString(), clone.ToString());
+		}
+
+		[Test]
+		public void World_can_be_initialized_with_Blinker_string()
+		{
+			const string blinkerInit = "- - -\r\nO O O\r\n- - -";
+			World world = new World(blinkerInit);
+			Console.Out.WriteLine(world);
 		}
 	}
 }
